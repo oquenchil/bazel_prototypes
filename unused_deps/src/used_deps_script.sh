@@ -4,7 +4,7 @@
 
 # This is to compensate for inotify recursive option
 # not seeming to work.
-find -L .  -not -type d > ./files_to_watch_list.txt
+find .  -not -type d > ./files_to_watch_list.txt
 
 inotifywait -e open -m --fromfile=./files_to_watch_list.txt -o $1 &
 
